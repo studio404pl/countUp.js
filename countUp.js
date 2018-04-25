@@ -16,7 +16,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 
 	var self = this;
 	self.version = function () { return '1.9.3'; };
-	
+
 	// default options
 	self.options = {
 		useEasing: true, // toggle easing
@@ -78,7 +78,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		num += '';
 		x = num.split('.');
 		x1 = x[0];
-        x2 = x.length > 1 ? '<sub>'+self.options.decimal+'</sub>' + x[1] : '';
+        x2 = x.length > 1 ? +self.options.decimal + '<sub>' + x[1] + '</sub>' : '';
 		if (self.options.useGrouping) {
 			x3 = '';
 			for (i = 0, len = x1.length; i < len; ++i) {
@@ -108,12 +108,12 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		return (typeof n === 'number' && !isNaN(n));
 	}
 
-	self.initialize = function() { 
+	self.initialize = function() {
 		if (self.initialized) return true;
-		
+
 		self.error = '';
 		self.d = (typeof target === 'string') ? document.getElementById(target) : target;
-		if (!self.d) { 
+		if (!self.d) {
 			self.error = '[CountUp] target is null or undefined'
 			return false;
 		}
