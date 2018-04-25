@@ -78,7 +78,7 @@ var CountUp = function(target, startVal, endVal, decimals, duration, options) {
 		num += '';
 		x = num.split('.');
 		x1 = x[0];
-        x2 = x.length > 1 ? +self.options.decimal + '<sub>' + x[1] + '</sub>' : '';
+    x2 = x.length > 1 ? self.options.decimal + '<sub>' + x[1] + '</sub>' : '';
 		if (self.options.useGrouping) {
 			x3 = '';
 			for (i = 0, len = x1.length; i < len; ++i) {
